@@ -34,6 +34,13 @@ const app = new Vue({
         ],
         activeSlide: 0,
     },
+    created: function() {
+		let self = this;
+        console.log(this);
+		setInterval(function() {
+            if(self.activeSlide === self.slides.length - 1? self.activeSlide = 0 : self.activeSlide++);
+        }, 3000);
+	},
     methods: {
         prevSlide() {
             if(this.activeSlide === 0? this.activeSlide = this.slides.length - 1 : this.activeSlide--);
@@ -44,5 +51,10 @@ const app = new Vue({
         setSlide(indexSlide) {
             this.activeSlide = indexSlide;
         },
+        // timer() {
+        //     setInterval( function() {
+        //         console.log(this.activeSlide);
+        //     }, 3000);
+        // }
     }
 })
