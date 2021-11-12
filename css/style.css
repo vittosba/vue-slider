@@ -65,6 +65,7 @@ body {
 .thumb.active {
     border: 4px solid red;
     opacity: 1;
+    cursor: default;
 }
 
 .thumbs .thumb img {
